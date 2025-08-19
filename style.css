@@ -1,0 +1,194 @@
+/* Basic Reset & Body Styling */
+body {
+    padding: 2rem;
+    font-family: 'Arial', sans-serif; /* You can change this font! */
+    /* color: #333; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Make sure it takes up the full viewport height */
+    background-size:cover; /* Ensures your image covers the whole background */
+    background-position: bottom; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating if image is small */
+    /* THIS IS WHERE YOU'LL PUT YOUR BACKGROUND IMAGE! */
+    background-image: url('./background.png'); /* REPLACE THIS! */
+    background-attachment: fixed; /* Keeps background fixed when scrolling, if content grows */
+    position: relative; /* Needed for overlay effect */
+}
+
+/* Optional: Add an overlay for better text readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.4); Dark overlay with 40% opacity */
+    z-index: 0; /* Make sure it's behind the content container */
+}
+.brand{
+    color: transparent;
+    background-size: contain; /* Ensures your image covers the whole background */
+    /* background-position: bottom; Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating if image is small */
+    /* THIS IS WHERE YOU'LL PUT YOUR BACKGROUND IMAGE! */
+    background-image: url('./kvstmzLogo.png'); /* REPLACE THIS! */
+    /* background-attachment: fixed; Keeps background fixed when scrolling, if content grows */
+    position: relative; /* Needed for overlay effect */
+    width: 550px;
+    height: 350px;
+}
+
+.announcement{
+    color: transparent;
+    background-size: contain; /* Ensures your image covers the whole background */
+    /* background-position: bottom; Centers the background image */
+    background-repeat: no-repeat; /* Prevents repeating if image is small */
+    /* THIS IS WHERE YOU'LL PUT YOUR BACKGROUND IMAGE! */
+    background-image: url('./comingSoon.png'); /* REPLACE THIS! */
+    /* background-attachment: fixed; Keeps background fixed when scrolling, if content grows */
+    position: relative; /* Needed for overlay effect */
+    width: 340px;
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+/* Content Container Styling */
+.container {
+    background-size:contain; /* Ensures your image covers the whole background */
+    /* background-position: bottom; Centers the background image */
+    background-repeat: no-repeat; /*Prevents repeating if image is small */
+    /* THIS IS WHERE YOU'LL PUT YOUR BACKGROUND IMAGE! */
+    /* background-attachment: fixed; Keeps background fixed when scrolling, if content grows */
+    position: relative; /* Needed for overlay effect */
+    background-image: url('./email.png'); /* White with slight transparency */
+    /* padding: 40px; */
+    text-align: center;
+    /* max-width: 600px; */
+    width: 350px;
+    z-index: 1; /* Make sure container is above the overlay */
+}
+
+
+
+.brand-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Email Form Styling */
+.email-form {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 3rem 0;
+    margin-top: 1.5rem;
+    
+  }
+  
+  .email-form input {
+    margin: 0 3px 3px;
+    padding: 4px 5px;
+    border: 3px solid #223A39;
+    color:#223A39;
+    /* border-radius: 5px; */
+    background-color: transparent;
+    font-size: 1em;
+}
+  input::placeholder{
+    color:#223A39;
+    font-weight: bold;
+  }
+
+.email-form button {
+    background-color: #333; /* Button background */
+    color: white;
+    padding: 12px 20px;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+    background-color: #530a84; /* Darker on hover */
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form-message.success {
+    color: #28a745; /* Green for success */
+}
+
+.form-message.error {
+    color: #dc3545; /* Red for error */
+}
+
+/* Collapsible Section Styling */
+.collapsible-header {
+    background-color: #333;
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ccc;
+}
+
+.collapsible-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header.active .chevron-icon {
+    transform: rotate(180deg); /* Rotate chevron when active */
+}
+
+.collapsible-content {
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Hide overflowing content */
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Smooth transition */
+    padding: 0 20px; /* No padding when collapsed */
+    text-align: left; /* Align text inside content */
+    opacity: 0; /* Start invisible */
+    background-color: #ccc;
+}
+
+.collapsible-content p, .collapsible-content ul {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.collapsible-content ul {
+    padding-left: 20px; /* Indent list items */
+}
+
+/* When content is expanded */
+.collapsible-content.expanded {
+    max-height: 500px; /* A value larger than the content will ever be */
+    padding: 15px 20px; /* Add padding when expanded */
+    opacity: 1; /* Make visible */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brand {
+        width: 300px;
+        height: 200px;
+    }
+    .announcement {
+        width: 300px;
+    }
+}
